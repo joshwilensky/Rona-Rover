@@ -14,7 +14,8 @@
     font-size: larger;
 }
 
-/* Search button bar */
-#search {}
+.card {
+    max-width: auto;
 
-;
+
+}
