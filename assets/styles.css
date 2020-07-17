@@ -1,0 +1,20 @@
+#stickyFooter {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    overflow: visible;
+    z-index: 99;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background: white;
+    border-top: solid white 2px;
+    background-color: tomato;
+    text-align: center;
+    color: white;
+    font-size: larger;
+}
+
+/* Search button bar */
+#search {}
+
+;
