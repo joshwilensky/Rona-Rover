@@ -1,3 +1,4 @@
+/* FOOTER */
 #stickyFooter {
     position: fixed;
     bottom: 0px;
@@ -8,13 +9,34 @@
     padding-bottom: 5px;
     background: white;
     border-top: solid white 2px;
-    background-color: tomato;
+    background-color: #333399;
     text-align: center;
     color: white;
     font-size: larger;
 }
 
-/* Search button bar */
-#search {}
+/* PICTURE CARDS */
+.card {
+    max-width: auto;
+}
 
-;
+/* TEAM NAME */
+#bl {
+    text-align: center;
+    padding-left: 2%;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.nav-wrapper {
+    background-color: #333399;
+}
+
+#search {
+    background-color: dodgerblue;
+}
+
+#search:focus {
+    background-color: white;
+    font-size: x-large;
+}
