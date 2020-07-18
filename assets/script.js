@@ -12,20 +12,23 @@ $(document).ready(function () {
   var uvEl = $("#uv");
   var curDateEl = $("#curdate");
   var fahr = $("#fahr");
+  var deathEl = $("#death");
+  var localEl = $("#localcases");
+  var usEl = $("#uscases");
+  var riskEl = $("#risk");
 
   //GLOBAL VARIABLES
 
   var weathAPIKey = "ca5f43cc4601dca5509d6c78b604147e";
   var curDate = moment(new Date());
   var currentState;
-  
 
   //FUNCTIONS=================================================
 
-  //function rendering the weather infos using OpenWeatherMap API 
+  //function rendering the weather infos using OpenWeatherMap API
   function renderWeather() {
     //   display current date
-      curDateEl.text(curDate.format("dddd,MMMM DD"));
+    curDateEl.text(curDate.format("dddd,MMMM DD"));
     // set up the weather API
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -84,19 +87,21 @@ $(document).ready(function () {
       iconEl.append(iconImg);
     });
   }
-    
-    // Function rendering corona stats using 
-    function ronaRender() {
-        var queryURL =
-        "https://api.apify.com/v2/datasets/SNXrtb5TsbK4bKmtT/items";
 
-      // We then created an AJAX call
-      $.ajax({
-        url: queryURL,
-        method: "GET",
-      }).then(function (response) {
+  // Function rendering corona stats using
+  function ronaRender() {
+    var queryURL = "https://api.apify.com/v2/datasets/SNXrtb5TsbK4bKmtT/items";
+      
+    // We then created an AJAX call
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
         console.log(response);
-        var ronaResults = response[0].casesByState.map(function (state) {
+        usEl.text("Cases Nationwide: " + response[0].totalCases);
+        deathEl.text("Death toll NationWide: " + response[0].totalDeaths);
+      var ronaResults = response[0].casesByState.map(function (state) {
+        
           var obj = {
             stateName: state.name,
             cases: state.casesReported,
@@ -109,16 +114,20 @@ $(document).ready(function () {
           } else {
             obj.risk = "Medium";
           }
-          {
-          }
           return obj;
-        });
-        console.log(ronaResults);
       });
-        
-    }
-    
-    
+        console.log(ronaResults);
+        ronaResults.forEach(st => {
+            if (st.stateName.toLowerCase() === currentState.toLowerCase()) {
+                $("#name").text("State: "+st.stateName);
+                riskEl.text("Infection Risk: "+st.risk);
+                localEl.text("Total cases: " + st.cases)
+                
+            }
+        });
+    });
+  }
+
   //EVENTS HANDLERS=============================================
   formEl.submit(function mvp(e) {
     currentState = userInput.val();
@@ -127,8 +136,8 @@ $(document).ready(function () {
     if (!currentState) {
       console.log("no");
     } else {
-        renderWeather();
-        ronaRender();
+      renderWeather();
+      ronaRender();
     }
   });
 });
