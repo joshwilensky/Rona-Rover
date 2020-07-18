@@ -44,7 +44,7 @@
     </nav>
     <nav>
       <div class="nav-wrapper">
-        <form>
+        <form id="form">
           <div class="input-field">
             <input id="search" type="search" required />
             <label class="label-icon" for="search"
@@ -74,7 +74,14 @@
                   <i class="material-icons">filter_drama</i>First
                 </div>
                 <div class="collapsible-body">
-                  <span>Lorem ipsum dolor sit amet.</span>
+                  <ul id="weathInfo">
+                    <li id="curdate"></li>
+                    <li id="iconel"></li>
+                    <li id="temp" style="display: none;">&#8457</li>
+                    <li id="hum"></li>
+                    <li id="uv"></li>
+
+                  </ul>
                 </div>
               </li>
             </ul>
@@ -143,5 +150,6 @@
       </div>
     </footer>
     <script src="assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
