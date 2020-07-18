@@ -1,42 +1,43 @@
 /* FOOTER */
 #stickyFooter {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    overflow: visible;
-    z-index: 99;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    background: white;
-    border-top: solid white 2px;
-    background-color: #333399;
-    text-align: center;
-    color: white;
-    font-size: larger;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  overflow: visible;
+  z-index: 99;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background: white;
+  border-top: solid white 2px;
+  background-color: #333399;
+  text-align: center;
+  color: white;
+  font-size: larger;
 }
 
 /* PICTURE CARDS */
 .card {
-    max-width: auto;
+  max-width: auto;
 }
 
 /* TEAM NAME */
 #bl {
-    text-align: center;
-    padding-left: 2%;
-    font-size: xx-large;
-    font-weight: bolder;
+  text-align: center;
+  padding-left: 2%;
+  font-size: xx-large;
+  font-weight: bolder;
 }
 
 .nav-wrapper {
-    background-color: #333399;
+  background-color: #333399;
 }
 
 #search {
-    background-color: dodgerblue;
+  background-color: dodgerblue;
 }
 
 #search:focus {
-    background-color: white;
-    font-size: x-large;
+  background-color: white;
+  font-size: x-large;
 }
+
