@@ -91,40 +91,72 @@ $(document).ready(function () {
   // Function rendering corona stats using
   function ronaRender() {
     var queryURL = "https://api.apify.com/v2/datasets/SNXrtb5TsbK4bKmtT/items";
-      
+
     // We then created an AJAX call
     $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-        console.log(response);
-        usEl.text("Cases Nationwide: " + response[0].totalCases);
-        deathEl.text("Death toll NationWide: " + response[0].totalDeaths);
+      console.log(response);
+      usEl.text("Cases Nationwide: " + response[0].totalCases);
+      deathEl.text("Death toll NationWide: " + response[0].totalDeaths);
       var ronaResults = response[0].casesByState.map(function (state) {
-        
-          var obj = {
-            stateName: state.name,
-            cases: state.casesReported,
-            risk: "",
-          };
-          if (state.casesReported < 10000) {
-            obj.risk = "Low";
-          } else if (state.casesReported > 30000) {
-            obj.risk = "High";
-          } else {
-            obj.risk = "Medium";
-          }
-          return obj;
+        var obj = {
+          stateName: state.name,
+          cases: state.casesReported,
+          risk: "",
+        };
+        if (state.casesReported < 10000) {
+          obj.risk = "Low";
+        } else if (state.casesReported > 30000) {
+          obj.risk = "High";
+        } else {
+          obj.risk = "Medium";
+        }
+        return obj;
       });
-        console.log(ronaResults);
-        ronaResults.forEach(st => {
-            if (st.stateName.toLowerCase() === currentState.toLowerCase()) {
-                $("#name").text("State: "+st.stateName);
-                riskEl.text("Infection Risk: "+st.risk);
-                localEl.text("Total cases: " + st.cases)
-                
-            }
-        });
+      console.log(ronaResults);
+      ronaResults.forEach((st) => {
+        if (st.stateName.toLowerCase() === currentState.toLowerCase()) {
+          $("#name").text("State: " + st.stateName);
+          riskEl.text("Infection Risk: " + st.risk);
+          localEl.text("Total cases: " + st.cases);
+        }
+      });
+    });
+  }
+  function renderStatePics() {
+    var APIKey = "563492ad6f91700001000001b2e60c4357b04a52adda21657c328fe6";
+    $.ajax({
+      method: "get",
+      url:
+        "https://api.pexels.com/v1/search?query=" +
+        currentState +
+        "&per_page=20",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", APIKey);
+      },
+    }).then(function (res) {
+      $("#weathpic").attr(
+        "src",
+        res.photos[Math.floor(Math.random() * res.photos.length)].src.medium
+      );
+      // console.log(res)
+      // console.log(res.photos[0].src.medium)
+    });
+    $.ajax({
+      method: "get",
+      url: "https://api.pexels.com/v1/search?query=covid19&per_page=20",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", APIKey);
+      },
+    }).then(function (res) {
+      $("#covid").attr(
+        "src",
+        res.photos[Math.floor(Math.random() * res.photos.length)].src.medium
+      );
+      // console.log(res)
+      // console.log(res.photos[0].src.medium)
     });
   }
 
@@ -138,6 +170,7 @@ $(document).ready(function () {
     } else {
       renderWeather();
       ronaRender();
+      renderStatePics();
     }
   });
 });
