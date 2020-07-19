@@ -41,7 +41,7 @@ $(document).ready(function () {
     }).then(function (response) {
       //   console.log(response);
       var currentTemp = (((response.main.temp - 273.15) * 9) / 5 + 32).toFixed(
-        1
+        0
       );
       tempEl.prepend("Temperature: " + currentTemp);
       tempEl.css("display", "block");
@@ -178,7 +178,7 @@ $(document).ready(function () {
       var index = 1;
       for (let i = 0; i < castArr.length; i = i + 8) {
         var listEl = castArr[i];
-        var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
+        var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(0);
           var castDate = moment(listEl.dt_txt);
           console.log(index);
           $("#day" + index).text("");
