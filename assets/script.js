@@ -179,15 +179,16 @@ $(document).ready(function () {
       for (let i = 0; i < castArr.length; i = i + 8) {
         var listEl = castArr[i];
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
-        var castDate = moment(listEl.dt_txt);
-        $("#day" + index).append(castDate.format("dddd") + " " + foreTemp);
-        var imgI=$("<img>")
+          var castDate = moment(listEl.dt_txt);
+          console.log(index);
+        $("#day" + index).prepend(castDate.format("dddd") + ": " + foreTemp);
+        var imgI = $("<img>");
         var iconcode = listEl.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
         console.log(iconurl);
-          imgI.attr("src", iconurl);
-          $("#day" + index).preppend(imgI);
-
+        imgI.attr("src", iconurl);
+        $("#day" + index).append(imgI);
+        
         index++;
       }
     });
