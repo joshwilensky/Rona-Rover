@@ -181,6 +181,7 @@ $(document).ready(function () {
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
           var castDate = moment(listEl.dt_txt);
           console.log(index);
+          $("#day" + index).text("");
         $("#day" + index).prepend(castDate.format("dddd") + ": " + foreTemp);
         var imgI = $("<img>");
         var iconcode = listEl.weather[0].icon;
