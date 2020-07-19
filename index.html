@@ -1,253 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Project</title>
+    <link rel="stylesheet" href="assets/styles.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team Project</title>
-  <link rel="stylesheet" href="assets/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!--Import materialize.css-->
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
 
-<body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" id="bl">'rona Rover</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn">Button</a></li>
-        <li>
-          <a class="waves-effect waves-light btn">Button <i class="material-icons right">cloud</i></a>
-        </li>
-        <li>
-          <a class="waves-effect waves-light btn">Button</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <nav>
-    <div class="nav-wrapper">
-      <form id="form">
-        <div class="input-field">
-          <input id="search" type="search" required />
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" id="bl">'rona Rover</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn">Button</a></li>
+          <li>
+            <a class="waves-effect waves-light btn"
+              >Button <i class="material-icons right">cloud</i></a
+            >
+          </li>
+          <li>
+            <a class="waves-effect waves-light btn">Button</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <nav>
+      <div class="nav-wrapper">
+        <form id="form" action="#weathinfo">
+          <div class="input-field">
+            <input id="search" type="search" required />
+            <label class="label-icon" for="search"
+              ><i class="material-icons">search</i></label
+            >
 
-  <div class="container" style="margin-bottom: 100px;">
-    <div class="row">
-      <h1>User Story</h1>
-    </div>
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image">
-            <img src="assets\aerial-architecture-blue-sky-buildings-466685.jpg" />
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+    </nav>
 
-            <body>
-              <nav>
-                <div class="nav-wrapper">
-                  <a href="#!" id="bl">'rona Rover</a>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a class="waves-effect waves-light btn">Button</a></li>
+    <div class="container" style="margin-bottom: 100px;">
+      <div class="row">
+        <h1>User Story</h1>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img
+                id="weathpic"
+                style="max-height: 234px; min-height: 234px;"
+                src="assets\aerial-architecture-blue-sky-buildings-466685.jpg"
+              />
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">filter_drama</i>Weather Conditions
+                </div>
+                <div class="collapsible-body">
+                  <ul id="weathinfo">
+                    <li id="curdate"></li>
+                    <li id="iconel"></li>
+                    <li id="temp" style="display: none;">&#8457</li>
+                    <li id="hum"></li>
+                    <li id="uv"></li>
+                  </ul>
+                  <ul class="collapsible">
                     <li>
-                      <a class="waves-effect waves-light btn">Button <i class="material-icons right">cloud</i></a>
-                    </li>
-                    <li>
-                      <a class="waves-effect waves-light btn">Button</a>
+                      <div class="collapsible-header">
+                        <i class="material-icons">filter_drama</i>Forecast
+                      </div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li id="foredate"></li>
+                    <li id="day1"><img
+                      id="icon1" src=""/>&#8457</li>
+                    <li id="day2">&#8457</li>
+                    <li id="day3">&#8457</li>
+                    <li id="day4">&#8457</li>
+                    <li id="day5">&#8457</li>
+                        </ul>
+                      </div>
                     </li>
                   </ul>
                 </div>
-              </nav>
-              <nav>
-                <div class="nav-wrapper">
-                  <form id="form" action="#weathinfo">
-                    <div class="input-field">
-                      <input id="search" type="search" required />
-                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-
-                      <i class="material-icons">close</i>
-                    </div>
-                  </form>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img
+                id="covid"
+                style="max-height: 234px; min-height: 234px;"
+                src="assets\flight-landscape-nature-sky-36717.jpg"
+              />
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">info</i>Covid-19 Stats
                 </div>
-              </nav>
-
-              <div class="container" style="margin-bottom: 100px;">
-                <div class="row">
-                  <h1>User Story</h1>
+                <div class="collapsible-body">
+                  <ul>
+                    <li id="name"></li>
+                    <li id="localcases"></li>
+                    <li id="uscases"></li>
+                    <li id="death"></li>
+                    <li id="risk"></li>
+                  </ul>
                 </div>
-                <div class="row">
-                  <div class="col s12 m6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img id="weathpic" style="max-height: 234px; min-height: 234px;"
-                          src="assets\aerial-architecture-blue-sky-buildings-466685.jpg" />
-                      </div>
-                      <ul class="collapsible">
-                        <li>
-                          <div class="collapsible-header">
-                            <i class="material-icons">filter_drama</i>Weather Conditions
-                          </div>
-                          <div class="collapsible-body">
-                            <ul id="weathinfo">
-                              <li id="curdate"></li>
-                              <li id="iconel"></li>
-                              <li id="temp" style="display: none;">&#8457</li>
-                              <li id="hum"></li>
-                              <li id="uv"></li>
-                            </ul>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <ul class="collapsible">
-                      <li>
-                        <div class="collapsible-header">
-                          <i class="material-icons">filter_drama</i>First
-                        </div>
-                        <div class="collapsible-body">
-                          <ul id="weathInfo">
-                            <li id="curdate"></li>
-                            <li id="iconel"></li>
-                            <li id="temp" style="display: none;">&#8457</li>
-                            <li id="hum"></li>
-                            <li id="uv"></li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="assets\seaport-during-daytime-132037.jpg" />
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">filter_drama</i>
                 </div>
-                <div class="col s12 m6">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="assets\flight-landscape-nature-sky-36717.jpg" />
-                      <div class="col s12 m6">
-                        <div class="card">
-                          <div class="card-image">
-                            <img id="covid" style="max-height: 234px; min-height: 234px;"
-                              src="assets\flight-landscape-nature-sky-36717.jpg" />
-                          </div>
-                          <ul class="collapsible">
-                            <li>
-                              <div class="collapsible-header">
-                                <i class="material-icons">info</i>Covid-19 Stats
-                              </div>
-                              <div class="collapsible-body">
-                                <ul>
-                                  <li id="name"></li>
-                                  <li id="localcases"></li>
-                                  <li id="uscases"></li>
-                                  <li id="death"></li>
-                                  <li id="risk"></li>
-                                </ul>
-                              </div>
-                            </li>
-                          </ul>
-
-                        </div>
-                        <ul class="collapsible">
-                          <li>
-                            <div class="collapsible-header">
-                              <i class="material-icons">filter_drama</i>First
-                            </div>
-                            <div class="collapsible-body">
-                              <ul>
-                                <li id="name"></li>
-                                <li id="localcases"></li>
-                                <li id="uscases"></li>
-                                <li id="death"></li>
-                                <li id="risk"></li>
-                              </ul>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col s12 m6">
-                      <div class="card">
-                        <div class="card-image">
-                          <img src="assets\seaport-during-daytime-132037.jpg" />
-
-                          <div class="row">
-                            <div class="col s12 m6">
-                              <div class="card">
-                                <div class="card-image">
-                                  <img src="assets\seaport-during-daytime-132037.jpg" />
-                                </div>
-                                <ul class="collapsible">
-                                  <li>
-                                    <div class="collapsible-header">
-                                      <i class="material-icons">filter_drama</i>
-                                    </div>
-                                    <div class="collapsible-body">
-                                      <span>Lorem ipsum dolor sit amet.</span>
-                                    </div>
-                                  </li>
-                                </ul>
-
-                              </div>
-                              <ul class="collapsible">
-                                <li>
-                                  <div class="collapsible-header">
-                                    <i class="material-icons">filter_drama</i>First
-                                  </div>
-                                  <div class="collapsible-body">
-                                    <span>Lorem ipsum dolor sit amet.</span>
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="col s12 m6">
-                            <div class="card">
-                              <div class="card-image">
-                                <img src="assets\mountain-beside-body-of-water-with-aurora-borealis-2113566.jpg" />
-                              </div>
-                              <ul class="collapsible">
-                                <li>
-                                  <div class="collapsible-header">
-                                    <i class="material-icons">filter_drama</i>First
-                                  </div>
-                                  <div class="collapsible-body">
-                                    <span>Lorem ipsum dolor sit amet.</span>
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <footer>
-                        <div class="icon-bar">
-                          <a href="https://www.facebook.com/Rona-Rover-111169047346069/?view_public_for=111169047346069"
-                            class="facebook"><i class="fa fa-facebook"></i></a>
-                          <a href="https://twitter.com/RoverRona" class="twitter"><i class="fa fa-twitter"></i></a>
-                          <a href="#" class="google"><i class="fa fa-google"></i></a>
-                          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                          <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
-                        </div>
-                        <div id="stickyFooter">
-                          <p>Content for sticky footer</p>
-                        </div>
-                      </footer>
-                      <script src="assets/script.js"></script>
-                      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-            </body>
-
+                <div class="collapsible-body">
+                  <span>Lorem ipsum dolor sit amet.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="assets\mountain-beside-body-of-water-with-aurora-borealis-2113566.jpg"
+              />
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">filter_drama</i>First
+                </div>
+                <div class="collapsible-body">
+                  <span>Lorem ipsum dolor sit amet.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="stickyFooter">
+        <p>Content for sticky footer</p>
+      </div>
+    </footer>
+    <script src="assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  </body>
 </html>
