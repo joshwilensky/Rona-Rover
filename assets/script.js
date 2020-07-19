@@ -177,17 +177,17 @@ $(document).ready(function () {
       console.log(castArr);
       var index = 1;
       for (let i = 0; i < castArr.length; i = i + 8) {
-        var listEl = castArr[i];
-<<<<<<< HEAD
+        var listEl = castArr[i]; <<
+        << << < HEAD
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
         var castDate = moment(listEl.dt_txt);
-        console.log(index);
-=======
+        console.log(index); ===
+        === =
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(0);
-          var castDate = moment(listEl.dt_txt);
-          console.log(index);
-          $("#day" + index).text("");
->>>>>>> master
+        var castDate = moment(listEl.dt_txt);
+        console.log(index);
+        $("#day" + index).text(""); >>>
+        >>> > master
         $("#day" + index).prepend(castDate.format("dddd") + ": " + foreTemp);
         var imgI = $("<img>");
         var iconcode = listEl.weather[0].icon;
