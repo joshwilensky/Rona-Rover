@@ -28,7 +28,7 @@ $(document).ready(function () {
   //function rendering the weather infos using OpenWeatherMap API
   function renderWeather() {
     //   display current date
-    curDateEl.text(curDate.format("dddd,MMMM DD"));
+    curDateEl.text(curDate.format("dddd, MMMM DD"));
     // set up the weather API
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -125,12 +125,12 @@ $(document).ready(function () {
       });
     });
   }
+
   function renderStatePics() {
     var APIKey = "563492ad6f91700001000001b2e60c4357b04a52adda21657c328fe6";
     $.ajax({
       method: "get",
-      url:
-        "https://api.pexels.com/v1/search?query=" +
+      url: "https://api.pexels.com/v1/search?query=" +
         currentState +
         "&per_page=20",
       beforeSend: function (xhr) {
@@ -179,8 +179,8 @@ $(document).ready(function () {
       for (let i = 0; i < castArr.length; i = i + 8) {
         var listEl = castArr[i];
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
-          var castDate = moment(listEl.dt_txt);
-          console.log(index);
+        var castDate = moment(listEl.dt_txt);
+        console.log(index);
         $("#day" + index).prepend(castDate.format("dddd") + ": " + foreTemp);
         var imgI = $("<img>");
         var iconcode = listEl.weather[0].icon;
@@ -188,7 +188,7 @@ $(document).ready(function () {
         console.log(iconurl);
         imgI.attr("src", iconurl);
         $("#day" + index).append(imgI);
-        
+
         index++;
       }
     });
