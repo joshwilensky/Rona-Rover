@@ -39,7 +39,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
+      //   console.log(response);
       var currentTemp = (((response.main.temp - 273.15) * 9) / 5 + 32).toFixed(
         1
       );
@@ -97,7 +97,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
+      //   console.log(response);
       usEl.text("Cases Nationwide: " + response[0].totalCases);
       deathEl.text("Death toll NationWide: " + response[0].totalDeaths);
       var ronaResults = response[0].casesByState.map(function (state) {
@@ -115,7 +115,7 @@ $(document).ready(function () {
         }
         return obj;
       });
-      console.log(ronaResults);
+      //   console.log(ronaResults);
       ronaResults.forEach((st) => {
         if (st.stateName.toLowerCase() === currentState.toLowerCase()) {
           $("#name").text("State: " + st.stateName);
@@ -159,11 +159,45 @@ $(document).ready(function () {
       // console.log(res.photos[0].src.medium)
     });
   }
+  // Function to get the forecast
+  function renderForecast() {
+    var castURL =
+      "http://api.openweathermap.org/data/2.5/forecast?q=" +
+      currentState +
+      "&appid=" +
+      weathAPIKey;
+    console.log("castURL:", castURL);
+    $.ajax({
+      url: castURL,
+      method: "GET",
+    }).then(function (castRes) {
+      // WHEN I view the UV index
+      console.log(castRes);
+      var castArr = castRes.list;
+      console.log(castArr);
+      var index = 1;
+      for (let i = 0; i < castArr.length; i = i + 8) {
+        var listEl = castArr[i];
+        var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
+          var castDate = moment(listEl.dt_txt);
+          console.log(index);
+        $("#day" + index).prepend(castDate.format("dddd") + ": " + foreTemp);
+        var imgI = $("<img>");
+        var iconcode = listEl.weather[0].icon;
+        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+        console.log(iconurl);
+        imgI.attr("src", iconurl);
+        $("#day" + index).append(imgI);
+        
+        index++;
+      }
+    });
+  }
 
   //EVENTS HANDLERS=============================================
   formEl.submit(function mvp(e) {
     currentState = userInput.val();
-    console.log(currentState);
+    // console.log(currentState);
     e.preventDefault();
     if (!currentState) {
       console.log("no");
@@ -171,6 +205,7 @@ $(document).ready(function () {
       renderWeather();
       ronaRender();
       renderStatePics();
+      renderForecast();
     }
   });
 });
