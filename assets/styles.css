@@ -1,23 +1,4 @@
-/* FOOTER */
-#stickyFooter {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    overflow: visible;
-    z-index: 99;
-    background: white;
-    border-top: solid #3366cc 15px;
-    background-color: #333399;
-    text-align: center;
-    color: white;
-    font-size: larger;
-}
-
-/* PICTURE CARDS */
-.card {
-    max-width: auto;
-}
-
+/* LOGO */
 .color {
     background-color: white;
     border-radius: 10px 30px;
@@ -28,8 +9,12 @@
     border-style: solid;
 }
 
+/* PICTURE CARDS */
+.card {
+    max-width: auto;
+}
 
-/* TEAM LOGO */
+/* NAVBAR */
 .nav-wrapper {
     background-color: #333399;
     border-color: dodgerblue;
@@ -40,9 +25,9 @@
 .nav-wrapper1 {
     background-color: #3366cc;
     padding-bottom: 1%;
-
 }
 
+/* SEARCH BOX */
 #search {
     background-color: #3366cc;
     font-size: x-large;
@@ -51,24 +36,24 @@
 #search:focus {
     background-color: white;
     font-size: x-large;
-
 }
 
+/* USER STORY */
 h3 {
     text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-top: 3%;
 
 }
 
 h5 {
     text-align: center;
     font-weight: normal;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-top: 1%;
+    padding-bottom: 5%;
     font-style: italic;
 }
 
+/* SOCIAL MEDIA ICONS */
 .icon-bar {
     position: fixed;
     top: 50%;
@@ -118,4 +103,19 @@ h5 {
 .content {
     margin-left: 75px;
     font-size: 30px;
+}
+
+/* FOOTER */
+#stickyFooter {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    overflow: visible;
+    z-index: 99;
+    background: white;
+    border-top: solid #3366cc 15px;
+    background-color: #333399;
+    text-align: center;
+    color: white;
+    font-size: larger;
 }

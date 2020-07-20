@@ -2,7 +2,7 @@ $(document).ready(function () {
   // Materialize collapsible Initialization
   $(".collapsible").collapsible();
 
-  //DEPENDECIES===============================================
+  // DEPENDENCIES===============================================
   var userInput = $("#search");
   var weathCard = $("#weathInfo");
   var formEl = $("#form");
@@ -17,19 +17,18 @@ $(document).ready(function () {
   var usEl = $("#uscases");
   var riskEl = $("#risk");
 
-  //GLOBAL VARIABLES
-
+  // GLOBAL VARIABLES
   var weathAPIKey = "ca5f43cc4601dca5509d6c78b604147e";
   var curDate = moment(new Date());
   var currentState;
 
-  //FUNCTIONS=================================================
+  // FUNCTIONS=================================================
 
-  //function rendering the weather infos using OpenWeatherMap API
+  // Function rendering the weather info using OpenWeatherMap API
   function renderWeather() {
-    //   display current date
+    // Display the current date
     curDateEl.text(curDate.format("dddd, MMMM DD"));
-    // set up the weather API
+    // Set up the weather API
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
       currentState +
@@ -39,7 +38,7 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      //   console.log(response);
+      // console.log(response);
       var currentTemp = (((response.main.temp - 273.15) * 9) / 5 + 32).toFixed(
         0
       );
@@ -178,16 +177,21 @@ $(document).ready(function () {
       var index = 1;
       for (let i = 0; i < castArr.length; i = i + 8) {
         var listEl = castArr[i]; <<
-        << << < HEAD
+        <<
+        <<
+        < HEAD
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
         var castDate = moment(listEl.dt_txt);
         console.log(index); ===
-        === =
+        ===
+        =
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(0);
         var castDate = moment(listEl.dt_txt);
         console.log(index);
         $("#day" + index).text(""); >>>
-        >>> > master
+        >>>
+        >
+        master
         $("#day" + index).prepend(castDate.format("dddd") + ": " + foreTemp);
         var imgI = $("<img>");
         var iconcode = listEl.weather[0].icon;
