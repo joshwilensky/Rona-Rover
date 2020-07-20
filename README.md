@@ -1,7 +1,7 @@
 # ronarover
 
-<img scr="assets/img/Screenshot-Web.png">
-<img scr="assets/img/Screenshot-Mobile.jpg">
+<img scr="assets\img\Screenshot-Web.png">
+<img scr="assets\img\Screenshot-Moblie.jpg">
 
 # User story
 
