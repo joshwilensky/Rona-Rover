@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Import materialize.css-->
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Compiled and minified CSS -->
@@ -28,34 +29,37 @@
   </head>
 
 <body>
-
   <nav>
-
     <div class="nav-wrapper">
-
-      <img src="assets\logo.png" alt="Logo" width="135" height="135" class="color" id="color2">
+      <a href="#!" id="bl">'rona Rover</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn">Button</a></li>
+        <li>
+          <a class="waves-effect waves-light btn">Button <i class="material-icons right">cloud</i></a>
+        </li>
+        <li>
+          <a class="waves-effect waves-light btn">Button</a>
+        </li>
+      </ul>
     </div>
   </nav>
-
+  <nav>
+    <div class="nav-wrapper">
+      <form id="form" action="#weathinfo">
+        <div class="input-field">
+          <input id="search" type="search" required />
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
   <div class="container" style="margin-bottom: 100px;">
     <div class="row">
-      <br>
       <h3>Keep up-to-date with the Coronavirus status where ever you are...
       </h3>
       <h5>With 'rona Rover, you will get all the information needed for your next trip.</h5>
     </div>
-    <nav>
-      <div class="nav-wrapper1">
-        <form>
-          <div class="input-field">
-            <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-        </form>
-      </div>
-    </nav>
-    </nav>
     <div class="row">
       <div class="col s12 m6">
         <div class="card">
@@ -165,9 +169,9 @@
   <footer>
     <div class="icon-bar">
       <a href="https://www.facebook.com/Rona-Rover-111169047346069" class="facebook"><i class="fa fa-facebook"></i></a>
-      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-      <a href="#" class="google"><i class="fa fa-google"></i></a>
-      <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/RoverRona" class="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/joshwilensky/Rona-Rover" class="google"><i class="fa fa-google"></i></a>
+      <a href="https://www.linkedin.com/company/66875738/admin/" class="linkedin"><i class="fa fa-linkedin"></i></a>
       <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
     </div>
     <div id="stickyFooter">
