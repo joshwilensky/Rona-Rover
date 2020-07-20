@@ -5,4 +5,4 @@
 
 # User story
 
-rona Rover is a web based application that alows users to track covid-19 cases.
+rona Rover is a web based application that allows users to track covid-19 cases.

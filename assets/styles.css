@@ -1,23 +1,4 @@
-/* FOOTER */
-#stickyFooter {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    overflow: visible;
-    z-index: 99;
-    background: white;
-    border-top: solid #3366cc 15px;
-    background-color: #333399;
-    text-align: center;
-    color: white;
-    font-size: larger;
-}
-
-/* PICTURE CARDS */
-.card {
-    max-width: auto;
-}
-
+/* LOGO */
 .color {
     background-color: white;
     border-radius: 10px 30px;
@@ -28,8 +9,12 @@
     border-style: solid;
 }
 
+/* PICTURE CARDS */
+.card {
+    max-width: auto;
+}
 
-/* TEAM LOGO */
+/* NAVBAR */
 .nav-wrapper {
     background-color: #333399;
     border-color: dodgerblue;
@@ -40,35 +25,74 @@
 .nav-wrapper1 {
     background-color: #3366cc;
     padding-bottom: 1%;
-
 }
 
-#search {
-    background-color: #3366cc;
-    font-size: x-large;
+/* SEARCH BOX */
+body {
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
 }
 
-#search:focus {
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: solid;
+    color: dodgerblue;
     background-color: white;
-    font-size: x-large;
-
 }
 
+.searchTerm:focus {
+    background-color: white;
+    color: black;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid dodgerblue;
+    background: dodgerblue;
+    text-align: center;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* USER STORY */
 h3 {
     text-align: center;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-top: 3%;
 
 }
 
 h5 {
     text-align: center;
     font-weight: normal;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-top: 1%;
+    padding-bottom: 5%;
     font-style: italic;
 }
 
+/* SOCIAL MEDIA ICONS */
 .icon-bar {
     position: fixed;
     top: 50%;
@@ -118,4 +142,19 @@ h5 {
 .content {
     margin-left: 75px;
     font-size: 30px;
+}
+
+/* FOOTER */
+#stickyFooter {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    overflow: visible;
+    z-index: 99;
+    background: white;
+    border-top: solid #3366cc 15px;
+    background-color: #333399;
+    text-align: center;
+    color: white;
+    font-size: larger;
 }
