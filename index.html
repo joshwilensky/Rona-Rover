@@ -6,59 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team Project</title>
   <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Our CSS Styling -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Project</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Project</title>
-    <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Imported Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--Import materialize.css-->
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </head>
+  <!--Imported materialize.css-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
 
 <body>
+  <!-- The Navbar-->
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" id="bl">'rona Rover</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn">Button</a></li>
-        <li>
-          <a class="waves-effect waves-light btn">Button <i class="material-icons right">cloud</i></a>
-        </li>
-        <li>
-          <a class="waves-effect waves-light btn">Button</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <nav>
-    <div class="nav-wrapper">
-      <form id="form" action="#weathinfo">
-        <div class="input-field">
-          <input id="search" type="search" required />
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
+      <a href="https://joshwilensky.github.io/Rona-Rover/">
+        <img src="assets\logo.png" alt="Logo" width="120" height="120" class="color">
+      </a>
     </div>
   </nav>
   <div class="container" style="margin-bottom: 100px;">
     <div class="row">
+      <br>
+
+      <!-- Our User Story -->
       <h3>Keep up-to-date with the Coronavirus status where ever you are...
       </h3>
       <h5>With 'rona Rover, you will get all the information needed for your next trip.</h5>
     </div>
+
+    <!-- Search box with icon-->
+    <nav>
+      <div class="nav-wrapper1">
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </div>
+    </nav>
+    </nav>
+
+    <!-- Card #1 (Weather) -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card">
@@ -82,10 +80,7 @@
                 <ul class="collapsible">
                   <li>
                     <div class="collapsible-header">
-                      <<<<<<< HEAD <i class="material-icons">filter_drama</i>5-Day Forecast
-                        =======
-                        <i class="material-icons">filter_drama</i> 5 day Forecast
-                        >>>>>>> master
+                      <i class="material-icons">filter_drama</i>5-Day Forecast
                     </div>
                     <div class="collapsible-body">
                       <ul>
@@ -100,10 +95,11 @@
                 </ul>
               </div>
             </li>
-
           </ul>
         </div>
       </div>
+
+      <!-- Card #2 (Coronavirus) -->
       <div class="col s12 m6">
         <div class="card">
           <div class="card-image">
@@ -126,10 +122,11 @@
               </div>
             </li>
           </ul>
-
         </div>
       </div>
     </div>
+
+    <!--Card #3 -->
     <div class="row">
       <div class="col s12 m6">
         <div class="card">
@@ -148,6 +145,8 @@
           </ul>
         </div>
       </div>
+
+      <!-- Card #4 -->
       <div class="col s12 m6">
         <div class="card">
           <div class="card-image">
@@ -167,14 +166,18 @@
       </div>
     </div>
   </div>
+
+  <!-- Social Media Icons -->
   <footer>
     <div class="icon-bar">
       <a href="https://www.facebook.com/Rona-Rover-111169047346069" class="facebook"><i class="fa fa-facebook"></i></a>
-      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-      <a href="#" class="google"><i class="fa fa-google"></i></a>
-      <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/home" class="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/joshwilensky/Rona-Rover" class="google"><i class="fa fa-google"></i></a>
+      <a href="https://www.linkedin.com/company/66875738/admin/" class="linkedin"><i class="fa fa-linkedin"></i></a>
       <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
     </div>
+
+    <!-- Footer -->
     <div id="stickyFooter">
       <p1>&copy Copyright 2020</p1>
     </div>
