@@ -1,7 +1,7 @@
 # ronarover
 
-<img scr="assets\img\Screenshot-Web.png" />
-<img scr="assets\img\Screenshot-Moblie.jpg" />
+<img scr="assets\img\Screenshot-Web.png" alt= "Theres supposed to be an image here" />
+<img scr="assets\img\Screenshot-Moblie.jpg" alt= "Theres supposed to be an image here" />
 
 # User story
 
