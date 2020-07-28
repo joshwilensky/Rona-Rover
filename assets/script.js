@@ -38,11 +38,12 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      // console.log(response);
+      console.log(response);
       var currentTemp = (((response.main.temp - 273.15) * 9) / 5 + 32).toFixed(
         0
       );
-      tempEl.prepend("Temperature: " + currentTemp);
+      console.log(currentTemp);
+      tempEl.text("Temperature: " + currentTemp);
       tempEl.css("display", "block");
       // display humidity
       var hum;
@@ -64,7 +65,6 @@ $(document).ready(function () {
         method: "GET",
       }).then(function (uvRes) {
         // WHEN I view the UV index
-
         var uvIndex = uvRes.value;
         // THEN I am presented with a color that indicates whether the conditions are
         // favorable, moderate, or severe
@@ -90,7 +90,6 @@ $(document).ready(function () {
   // Function rendering corona stats using
   function ronaRender() {
     var queryURL = "https://api.apify.com/v2/datasets/SNXrtb5TsbK4bKmtT/items";
-
     // We then created an AJAX call
     $.ajax({
       url: queryURL,
@@ -114,7 +113,7 @@ $(document).ready(function () {
         }
         return obj;
       });
-      //   console.log(ronaResults);
+      console.log(ronaResults);
       ronaResults.forEach((st) => {
         if (st.stateName.toLowerCase() === currentState.toLowerCase()) {
           $("#name").text("State: " + st.stateName);
@@ -129,7 +128,8 @@ $(document).ready(function () {
     var APIKey = "563492ad6f91700001000001b2e60c4357b04a52adda21657c328fe6";
     $.ajax({
       method: "get",
-      url: "https://api.pexels.com/v1/search?query=" +
+      url:
+        "https://api.pexels.com/v1/search?query=" +
         currentState +
         "&per_page=20",
       beforeSend: function (xhr) {
@@ -140,8 +140,6 @@ $(document).ready(function () {
         "src",
         res.photos[Math.floor(Math.random() * res.photos.length)].src.medium
       );
-      // console.log(res)
-      // console.log(res.photos[0].src.medium)
     });
     $.ajax({
       method: "get",
@@ -196,28 +194,31 @@ $(document).ready(function () {
       }
     });
   }
-  document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.sidenav');
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".sidenav");
+    console.log(elems);
     var instances = M.Sidenav.init(elems, options);
+    console.log(instances);
   });
 
   // Or with jQuery
 
-  $(document).ready(function () {
-    $('.sidenav').sidenav();
-  });
-  //EVENTS HANDLERS=============================================
-  formEl.submit(function mvp(e) {
+  // $(document).ready(function () {
+  //   $(".sidenav").sidenav();
+  // });
+  // //EVENTS HANDLERS=============================================
+
+  $(".material-icons").on("click", function mvp(e) {
     currentState = userInput.val();
-    // console.log(currentState);
     e.preventDefault();
     if (!currentState) {
       console.log("no");
     } else {
-      renderWeather();
-      ronaRender();
-      renderStatePics();
-      renderForecast();
+      renderWeather(currentState);
+      ronaRender(currentState);
+      renderStatePics(currentState);
+      renderForecast(currentState);
     }
   });
 });
