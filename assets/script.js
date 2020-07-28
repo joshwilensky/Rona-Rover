@@ -34,7 +34,6 @@ $(document).ready(function () {
       currentState +
       "&appid=" +
       weathAPIKey;
-    console.log(queryURL);
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -66,7 +65,6 @@ $(document).ready(function () {
         method: "GET",
       }).then(function (uvRes) {
         // WHEN I view the UV index
-
         var uvIndex = uvRes.value;
         // THEN I am presented with a color that indicates whether the conditions are
         // favorable, moderate, or severe
@@ -92,7 +90,6 @@ $(document).ready(function () {
   // Function rendering corona stats using
   function ronaRender() {
     var queryURL = "https://api.apify.com/v2/datasets/SNXrtb5TsbK4bKmtT/items";
-
     // We then created an AJAX call
     $.ajax({
       url: queryURL,
@@ -143,8 +140,6 @@ $(document).ready(function () {
         "src",
         res.photos[Math.floor(Math.random() * res.photos.length)].src.medium
       );
-      // console.log(res)
-      // console.log(res.photos[0].src.medium)
     });
     $.ajax({
       method: "get",
@@ -162,7 +157,7 @@ $(document).ready(function () {
     });
   }
   // Function to get the forecast
-  function renderForecast(currentState) {
+  function renderForecast() {
     var castURL =
       "http://api.openweathermap.org/data/2.5/forecast?q=" +
       currentState +
@@ -215,16 +210,14 @@ $(document).ready(function () {
   // //EVENTS HANDLERS=============================================
 
   $(".material-icons").on("click", function mvp(e) {
-    console.log("testinit");
     currentState = userInput.val();
-    console.log("dsfdf" + currentState);
     e.preventDefault();
     if (!currentState) {
       console.log("no");
     } else {
       renderWeather(currentState);
-      ronaRender();
-      renderStatePics();
+      ronaRender(currentState);
+      renderStatePics(currentState);
       renderForecast(currentState);
     }
   });
