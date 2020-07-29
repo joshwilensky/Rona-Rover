@@ -221,4 +221,17 @@ $(document).ready(function () {
       renderForecast(currentState);
     }
   });
+  formEl.submit(function mvp(e) {
+    currentState = userInput.val();
+    // console.log(currentState);
+    e.preventDefault();
+    if (!currentState) {
+      console.log("no");
+    } else {
+      renderWeather();
+      ronaRender();
+      renderStatePics();
+      renderForecast();
+    }
+  });
 });
