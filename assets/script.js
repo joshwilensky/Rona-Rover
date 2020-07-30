@@ -226,13 +226,14 @@ $(document).ready(function () {
     currentState = userInput.val();
     // console.log(currentState);
     e.preventDefault();
-    if (!currentState) {
-      console.log("no");
+    if (!currentState || currentState == " ") {
+      alert("Please enter a valid State");
     } else {
       renderWeather();
       ronaRender();
       renderStatePics();
       renderForecast();
+      userInput.val(" ");
     }
   });
 });
