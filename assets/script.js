@@ -83,6 +83,7 @@ $(document).ready(function () {
       console.log(iconcode);
       var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
       iconImg.attr("src", iconurl);
+      iconEl.text("");
       iconEl.append(iconImg);
     });
   }
