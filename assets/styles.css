@@ -15,14 +15,14 @@
 }
 
 /* NAVBAR */
-.nav-wrapper {
+#nav-wrapper {
   background-color: #333399;
   border-color: dodgerblue;
   border-bottom: solid #3366cc 15px;
   padding-bottom: 30px;
+  margin-bottom: 30px;
 }
-
-.input-field {
+*/ #input-field {
   background-color: dodgerblue;
   border: ridge;
   border-radius: 0;
@@ -122,8 +122,8 @@ h5 {
   overflow: visible;
   z-index: 99;
   background: white;
-  border-top: solid #3366cc 15px;
-  background-color: #333399;
+  padding: 10px;
+  background-color: rgb(0, 174, 255);
   text-align: center;
   color: white;
   font-size: larger;
