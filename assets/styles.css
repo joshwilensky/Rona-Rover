@@ -1,5 +1,11 @@
 /* LOGO */
 .color {
+    background-color: white;
+    margin-left: 2%;
+    margin-top: .5%;
+    border-color: #333399;
+    border-style: solid;
+
   background-color: white;
   border-radius: 10px 30px;
   margin-left: 2%;
@@ -7,7 +13,6 @@
   padding-bottom: 1%;
   border-color: #333399;
   border-style: solid;
-}
 
 /* PICTURE CARDS */
 .card {
@@ -15,11 +20,17 @@
 }
 
 /* NAVBAR */
+
+.navbar {
+    background-color: #333399;
+    line-height: 20px;
+
 .nav-wrapper {
   background-color: #333399;
   border-color: dodgerblue;
   border-bottom: solid #3366cc 15px;
   padding-bottom: 30px;
+
 }
 
 .input-field {
