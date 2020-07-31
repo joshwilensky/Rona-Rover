@@ -1,10 +1,8 @@
 /* LOGO */
 .color {
     background-color: white;
-    border-radius: 10px 30px;
     margin-left: 2%;
     margin-top: .5%;
-    padding-bottom: 1%;
     border-color: #333399;
     border-style: solid;
 }
@@ -15,11 +13,9 @@
 }
 
 /* NAVBAR */
-.nav-wrapper {
+.navbar {
     background-color: #333399;
-    border-color: dodgerblue;
-    border-bottom: solid #3366cc 15px;
-    padding-bottom: 30px;
+    line-height: 20px;
 }
 
 .input-field {
