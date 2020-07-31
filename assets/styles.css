@@ -5,14 +5,7 @@
   margin-top: .5%;
   border-color: #333399;
   border-style: solid;
-
-  background-color: white;
-  border-radius: 10px 30px;
-  margin-left: 2%;
-  margin-top: 0.5%;
   padding-bottom: 1%;
-  border-color: #333399;
-  border-style: solid;
 }
 
 /* PICTURE CARDS */
@@ -21,7 +14,6 @@
 }
 
 /* NAVBAR */
-
 .navbar {
   background-color: #333399;
   line-height: 20px;
