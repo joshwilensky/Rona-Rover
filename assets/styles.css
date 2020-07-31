@@ -1,10 +1,10 @@
 /* LOGO */
 .color {
-    background-color: white;
-    margin-left: 2%;
-    margin-top: .5%;
-    border-color: #333399;
-    border-style: solid;
+  background-color: white;
+  margin-left: 2%;
+  margin-top: .5%;
+  border-color: #333399;
+  border-style: solid;
 
   background-color: white;
   border-radius: 10px 30px;
@@ -13,6 +13,7 @@
   padding-bottom: 1%;
   border-color: #333399;
   border-style: solid;
+}
 
 /* PICTURE CARDS */
 .card {
@@ -22,8 +23,9 @@
 /* NAVBAR */
 
 .navbar {
-    background-color: #333399;
-    line-height: 20px;
+  background-color: #333399;
+  line-height: 20px;
+}
 
 .nav-wrapper {
   background-color: #333399;
