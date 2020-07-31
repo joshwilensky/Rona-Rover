@@ -227,7 +227,7 @@ $(document).ready(function () {
     // console.log(currentState);
     e.preventDefault();
     if (!currentState || currentState == " ") {
-      alert("Please enter a valid State");
+      alert("Invalid entry!");
     } else {
       renderWeather();
       ronaRender();
