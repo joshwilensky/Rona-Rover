@@ -42,7 +42,7 @@ $(document).ready(function () {
       var currentTemp = (((response.main.temp - 273.15) * 9) / 5 + 32).toFixed(
         0
       );
-      console.log(currentTemp);
+      // console.log(currentTemp);
       tempEl.text("Temperature: " + currentTemp);
       tempEl.css("display", "block");
       // display humidity
@@ -80,7 +80,7 @@ $(document).ready(function () {
       // get the icon
       var iconcode = response.weather[0].icon;
       var iconImg = $("<img>");
-      console.log(iconcode);
+      // console.log(iconcode);
       var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
       iconImg.attr("src", iconurl);
       iconEl.text("");
@@ -90,38 +90,36 @@ $(document).ready(function () {
   // CORONA CARD
   // Function rendering corona stats using
   function ronaRender() {
-    var queryURL = "https://api.apify.com/v2/datasets/SNXrtb5TsbK4bKmtT/items";
+    var queryURL = "https://covidtracking.com/api/states/info";
     // We then created an AJAX call
-    $.ajax({
+    var ronaAjax = $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      //   console.log(response);
-      usEl.text("Cases Nationwide: " + response[0].totalCases);
-      deathEl.text("Death toll NationWide: " + response[0].totalDeaths);
-      var ronaResults = response[0].casesByState.map(function (state) {
+      var ronaResults = response.map(function (state) {
         var obj = {
           stateName: state.name,
-          cases: state.casesReported,
-          risk: "",
+          notes: state.notes,
+          website: state.covid19Site,
+          twitter: state.twitter,
         };
-        if (state.casesReported < 10000) {
-          obj.risk = "Low";
-        } else if (state.casesReported > 30000) {
-          obj.risk = "High";
-        } else {
-          obj.risk = "Medium";
-        }
         return obj;
       });
       console.log(ronaResults);
-      ronaResults.forEach((st) => {
-        if (st.stateName.toLowerCase() === currentState.toLowerCase()) {
+      console.log(currentState);
+
+      for (var i = 0; i < ronaResults.length; i++) {
+        var st = ronaResults[i];
+        var curst = st.stateName;
+        console.log(curst);
+        if (curst.toLowerCase() == currentState.toLowerCase()) {
           $("#name").text("State: " + st.stateName);
-          riskEl.text("Infection Risk: " + st.risk);
-          localEl.text("Total cases: " + st.cases);
+          console.log(st.stateName);
+          $("#notes").text("News: " + st.notes);
+          $("#website").text("Website" + st.website);
+          $("#twitter").text("Twitter: " + st.twitter);
         }
-      });
+      }
     });
   }
 
@@ -170,24 +168,24 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (castRes) {
       // WHEN I view the UV index
-      console.log(castRes);
+      // console.log(castRes);
       var castArr = castRes.list;
-      console.log(castArr);
+      // console.log(castArr);
       var index = 1;
       for (let i = 0; i < castArr.length; i = i + 8) {
         var listEl = castArr[i];
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(1);
         var castDate = moment(listEl.dt_txt);
-        console.log(index);
+        // console.log(index);
         var foreTemp = (((listEl.main.temp - 273.15) * 9) / 5 + 32).toFixed(0);
         var castDate = moment(listEl.dt_txt);
-        console.log(index);
+        // console.log(index);
         $("#day" + index).text("");
         $("#day" + index).prepend(castDate.format("dddd") + ": " + foreTemp);
         var imgI = $("<img>");
         var iconcode = listEl.weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-        console.log(iconurl);
+        // console.log(iconurl);
         imgI.attr("src", iconurl);
         $("#day" + index).append(imgI);
 
@@ -220,6 +218,7 @@ $(document).ready(function () {
       ronaRender(currentState);
       renderStatePics(currentState);
       renderForecast(currentState);
+      ronaAjax.abort();
     }
   });
   formEl.submit(function mvp(e) {
@@ -233,6 +232,7 @@ $(document).ready(function () {
       ronaRender();
       renderStatePics();
       renderForecast();
+      ronaAjax.abort();
       userInput.val(" ");
     }
   });
