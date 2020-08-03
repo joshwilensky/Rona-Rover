@@ -92,7 +92,7 @@ $(document).ready(function () {
   function ronaRender() {
     var queryURL = "https://covidtracking.com/api/states/info";
     // We then created an AJAX call
-    $.ajax({
+    var ronaAjax = $.ajax({
       url: queryURL,
       method: "GET",
     }).then(function (response) {
@@ -110,7 +110,9 @@ $(document).ready(function () {
 
       for (var i = 0; i < ronaResults.length; i++) {
         var st = ronaResults[i];
-        if (st.stateName.toLowerCase() == currentState.toLowerCase()) {
+        var curst = st.stateName;
+        console.log(curst);
+        if (curst.toLowerCase() == currentState.toLowerCase()) {
           $("#name").text("State: " + st.stateName);
           console.log(st.stateName);
           $("#notes").text("News: " + st.notes);
@@ -216,6 +218,7 @@ $(document).ready(function () {
       ronaRender(currentState);
       renderStatePics(currentState);
       renderForecast(currentState);
+      ronaAjax.abort();
     }
   });
   formEl.submit(function mvp(e) {
@@ -229,6 +232,7 @@ $(document).ready(function () {
       ronaRender();
       renderStatePics();
       renderForecast();
+      ronaAjax.abort();
       userInput.val(" ");
     }
   });
