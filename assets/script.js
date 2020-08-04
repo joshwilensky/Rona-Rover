@@ -27,7 +27,7 @@ $(document).ready(function () {
   // Function rendering the weather info using OpenWeatherMap API
   function renderWeather() {
     // Display the current date
-    curDateEl.text(curDate.format("dddd, MMMM DD"));
+    curDateEl.text(curDate.format("dddd, MMMM DD, Y"));
     // Set up the weather API
     var queryURL =
       "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -43,7 +43,7 @@ $(document).ready(function () {
         0
       );
       // console.log(currentTemp);
-      tempEl.text("Temperature: " + currentTemp);
+      tempEl.text("Current Temp.: " + currentTemp + "°F");
       tempEl.css("display", "block");
       // display humidity
       var hum;
@@ -127,8 +127,7 @@ $(document).ready(function () {
     var APIKey = "563492ad6f91700001000001b2e60c4357b04a52adda21657c328fe6";
     $.ajax({
       method: "get",
-      url:
-        "https://api.pexels.com/v1/search?query=" +
+      url: "https://api.pexels.com/v1/search?query=" +
         currentState +
         "&per_page=20",
       beforeSend: function (xhr) {
